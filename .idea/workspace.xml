@@ -5,9 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home-hero-banner/home-hero-banner.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-hero-banner/home-hero-banner.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home-hero-banner/home-hero-banner.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-hero-banner/home-hero-banner.styles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home-hero/home-hero.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-hero/home-hero.styles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.styles.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -55,7 +57,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679167639102</updated>
-      <workItem from="1679167640814" duration="14308000" />
+      <workItem from="1679167640814" duration="19867000" />
+      <workItem from="1679617983601" duration="1830000" />
+      <workItem from="1680799901341" duration="2645000" />
+      <workItem from="1681153523238" duration="4929000" />
+      <workItem from="1681329678266" duration="90000" />
+      <workItem from="1681344149982" duration="515000" />
+      <workItem from="1681926835732" duration="1526000" />
+      <workItem from="1682522551856" duration="84000" />
+      <workItem from="1682615635330" duration="2025000" />
     </task>
     <servers />
   </component>

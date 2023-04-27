@@ -1,18 +1,19 @@
-import {H1, P, Container, StyledBox} from './home-hero-banner.styles'
+import {H1, P, Container, StyledBox, GradientContainer, GradientText} from './home-hero-banner.styles'
 
 const HomeHeroBanner = () => {
   return(
     <Container>
       <H1>
-        Yoga for humans.
+        A Yogis Companion App.
       </H1>
       <P>
-        Lorum Ipsum Dolor sifdsa fdsa fdsa fd sa fdsaf dsa f dsa fdsafdsa fdsa
+        Free Audio classes led by Gabby in a meditative yoga. Your companion for yoga when outside the studio.
       </P>
-      <StyledBox>
-        Example of a box with border
-      </StyledBox>
-
+      <GradientContainer>
+        <GradientText>
+          <p>Sign up, we don't spam</p>
+        </GradientText>
+      </GradientContainer>
     </Container>
   )
 }

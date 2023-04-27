@@ -9,19 +9,13 @@ const HomeHero = styled.div`
   width: 100vw;
   height: 100vh;
 
-  ///* Flexbox stuff */
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-
   /* Text styles */
   text-align: center;
 
-  /* */
+  /* Background */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  //background-attachment: fixed;
   `;
 
 export default HomeHero
