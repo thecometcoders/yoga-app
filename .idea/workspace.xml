@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="608373af-fa2a-4932-9b46-5b04e421d722" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -10,6 +11,16 @@
       <change beforePath="$PROJECT_DIR$/src/components/home-hero/home-hero.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home-hero/home-hero.styles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.component.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.styles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.styles.jsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+>>>>>>> 02b8743 (added prettier configuration and formated project)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +47,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+<<<<<<< HEAD
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+=======
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+>>>>>>> 02b8743 (added prettier configuration and formated project)
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -66,6 +86,11 @@
       <workItem from="1681926835732" duration="1526000" />
       <workItem from="1682522551856" duration="84000" />
       <workItem from="1682615635330" duration="2025000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1682725316835" duration="320000" />
+      <workItem from="1682979978049" duration="793000" />
+>>>>>>> 02b8743 (added prettier configuration and formated project)
     </task>
     <servers />
   </component>
@@ -83,4 +108,11 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+>>>>>>> 02b8743 (added prettier configuration and formated project)
 </project>
