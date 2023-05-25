@@ -1,0 +1,23 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+     /*this makes sure the padding and the border is included in the box sizing */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    background: black;
+
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    font-weight: bold;
+}
+
