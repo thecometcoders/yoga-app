@@ -43,7 +43,7 @@ const SingInPopup = () => {
           <a className="a-forgot-password">Forgot Password?</a>
           <hr className="separator-line" />
           <p>Don't have a account?</p>
-          <a className="a-sing-up-a">Sing Up</a>
+          <a className="a-sing-up-a ">Sing Up</a>
         </div>
       </div>
     </div>
