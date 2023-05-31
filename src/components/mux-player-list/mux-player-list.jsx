@@ -14,31 +14,35 @@ export default function MuxPlayerList() {
         <MuxAudio
           primaryColor={"#ffffff"}
           secondaryColor={"rgba(255, 255, 255, 0.1)"}
-          title={"This is the title"}
+          title={"You are where you need to be"}
           playbackId={"AKeCXTzf4bGfFd01023JAn671dI9y02P91bVMb5CMx2pcs"}
           streamType={"on-demand"}
           audio={true}
           metadata={{ video_id: "videoId20", video_title: "Title: Audio Only" }}
         />
       </Item>
-      {/*<Item>*/}
-      {/*  <MuxPlayer*/}
-      {/*    title={"This is the title"}*/}
-      {/*    playbackId={"AKeCXTzf4bGfFd01023JAn671dI9y02P91bVMb5CMx2pcs"}*/}
-      {/*    streamType={"on-demand"}*/}
-      {/*    audio={true}*/}
-      {/*    metadata={{ video_id: "videoId20", video_title: "Title: Audio Only" }}*/}
-      {/*  />*/}
-      {/*</Item>*/}
-      {/*<Item>*/}
-      {/*  <MuxPlayer*/}
-      {/*    title={"This is the title"}*/}
-      {/*    playbackId={"AKeCXTzf4bGfFd01023JAn671dI9y02P91bVMb5CMx2pcs"}*/}
-      {/*    streamType={"on-demand"}*/}
-      {/*    audio={true}*/}
-      {/*    metadata={{ video_id: "videoId20", video_title: "Title: Audio Only" }}*/}
-      {/*  />*/}
-      {/*</Item>*/}
+      <Item>
+        <MuxAudio
+          primaryColor={"#ffffff"}
+          secondaryColor={"rgba(255, 255, 255, 0.1)"}
+          title={"Care less, so we can do more"}
+          playbackId={"AKeCXTzf4bGfFd01023JAn671dI9y02P91bVMb5CMx2pcs"}
+          streamType={"on-demand"}
+          audio={true}
+          metadata={{ video_id: "videoId20", video_title: "Title: Audio Only" }}
+        />
+      </Item>
+      <Item>
+        <MuxAudio
+          primaryColor={"#ffffff"}
+          secondaryColor={"rgba(255, 255, 255, 0.1)"}
+          title={"A warrior in the garden"}
+          playbackId={"AKeCXTzf4bGfFd01023JAn671dI9y02P91bVMb5CMx2pcs"}
+          streamType={"on-demand"}
+          audio={true}
+          metadata={{ video_id: "videoId20", video_title: "Title: Audio Only" }}
+        />
+      </Item>
     </Container>
   );
 }

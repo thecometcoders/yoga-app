@@ -1,21 +1,17 @@
-import {H1, P, Container, StyledBox, GradientContainer, GradientText} from './home-hero-banner.styles'
+import { P, H1, Container } from "./home-hero-banner.styles";
 
 const HomeHeroBanner = () => {
-  return(
+  return (
     <Container>
-      <H1>
-        A Yogis Companion App.
-      </H1>
+      <H1>A Yogis Companion App.</H1>
       <P>
-        Free Audio classes led by Gabby in a meditative yoga. Your companion for yoga when outside the studio.
+        Welcome! YogiComet is a companion app for Yogi's. You can find Audio
+        classes and a library of yoga poses to help you in your yoga journey. If
+        you find this app useful to you and your practice please consider
+        donating it is ran by volunteers.
       </P>
-      <GradientContainer>
-        <GradientText>
-          <p>Sign up, we don't spam</p>
-        </GradientText>
-      </GradientContainer>
     </Container>
-  )
-}
+  );
+};
 
 export default HomeHeroBanner;
