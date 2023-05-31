@@ -12,7 +12,7 @@ export const Container = styled.div`
   background-image: radial-gradient(
       farthest-side at bottom left,
       rgba(0, 176, 56, 0.5),
-      transparent 800px
+      transparent 1800px
     ),
     radial-gradient(
       farthest-corner at top right,
