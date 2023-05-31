@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import img from '../../assets/banner_image.jpg'
+import img from "../../assets/banner_image.jpg";
 
 const HomeHero = styled.div`
   background-image: url(${img});
@@ -14,8 +14,11 @@ const HomeHero = styled.div`
 
   /* Background */
   background-size: cover;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
-  `;
+  @media (max-width: 768px) {
+    background-position: right -200px bottom;
+  }
+`;
 
-export default HomeHero
+export default HomeHero;
