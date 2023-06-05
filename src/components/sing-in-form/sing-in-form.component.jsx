@@ -1,8 +1,31 @@
-import "./sing-in-form.styles.scss";
+import { useState } from "react";
 import { ReactComponent as EyeLogo } from "../../assets/eye-outline.svg";
 import { ReactComponent as CloseLogo } from "../../assets/close-circle-outline.svg";
+import "./sing-in-form.styles.scss";
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
 const SingInPopup = () => {
+  const defaultFormFields = {
+    email: "",
+    password: "",
+  };
+
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGooglePopup();
+    const userDocRef = await createUserDocumentFromAuth(user);
+  };
+
   return (
     <div className="wrapper">
       <CloseLogo className="close-logo" />
@@ -15,6 +38,9 @@ const SingInPopup = () => {
               className="input"
               label="email"
               type="email"
+              name="email"
+              onChange={handleChange}
+              value={email}
               required
             ></input>
             <label>Email</label>
@@ -25,6 +51,9 @@ const SingInPopup = () => {
               className="input"
               label="password"
               type="password"
+              name="password"
+              onChange={handleChange}
+              value={password}
               required
             ></input>
             <label>Password</label>
@@ -38,6 +67,10 @@ const SingInPopup = () => {
         <button type="submit" className="btn">
           {" "}
           Log in
+        </button>
+        <button type="submit" className="btn" onClick={logGoogleUser}>
+          {" "}
+          Sing in whit Google
         </button>
         <div className="sing-in-register">
           <a className="a-forgot-password">Forgot Password?</a>
