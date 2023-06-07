@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ReactComponent as EyeLogo } from "../../assets/eye-outline.svg";
 import { ReactComponent as CloseLogo } from "../../assets/close-circle-outline.svg";
-import "./sing-in-form.styles.scss";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
+  SingInAuthUserWhitEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
+import "./sing-in-form.styles.scss";
 
 const SingInPopup = () => {
   const defaultFormFields = {
@@ -16,16 +17,43 @@ const SingInPopup = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const logGoogleUser = async () => {
+  const logInWhitGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await createUserDocumentFromAuth(user);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await SingInAuthUserWhitEmailAndPassword(
+        email,
+        password
+      );
+      console.log(response);
+
+      resetFormFields();
+    } catch (error) {
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("Your Password is incorrect");
+          break;
+        case "auth/user-not-found":
+          alert("No user associated whit this Email ");
+          break;
+        default:
+          console.log(error);
+      }
+    }
+  };
   return (
     <div className="wrapper">
       <CloseLogo className="close-logo" />
@@ -64,11 +92,11 @@ const SingInPopup = () => {
             </label>
           </div>
         </form>
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" onClick={handleSubmit}>
           {" "}
           Log in
         </button>
-        <button type="submit" className="btn" onClick={logGoogleUser}>
+        <button type="button" className="btn" onClick={logInWhitGoogle}>
           {" "}
           Sing in whit Google
         </button>

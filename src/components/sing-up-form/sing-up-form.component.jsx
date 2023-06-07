@@ -1,23 +1,56 @@
 import "./sing-up-form.component.styles.scss";
 import { ReactComponent as EyeLogo } from "../../assets/eye-outline.svg";
 import { ReactComponent as CloseLogo } from "../../assets/close-circle-outline.svg";
+import {
+  createAuthUserWhitEmailAndPassword,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 import { useState } from "react";
 
 const SingUpPopup = () => {
   const defaultFormFields = {
-    userName: "",
+    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
   };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { userName, email, password, confirmPassword } = formFields;
+  const { displayName, email, password, confirmPassword } = formFields;
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
+  console.log(formFields);
   const inputHandler = (event) => {
     const { value, name } = event.target;
+
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Password do no match");
+      return;
+    }
+
+    try {
+      const { user } = await createAuthUserWhitEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserDocumentFromAuth(user, { displayName });
+      resetFormFields();
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("Cannot create user , email already in use");
+      } else {
+        console.error("user creation encounter a error", error);
+      }
+    }
   };
 
   return (
@@ -26,16 +59,18 @@ const SingUpPopup = () => {
 
       <div className="form-box-singUp">
         <h2>Sign Up </h2>
-        <form onChange={inputHandler}>
+
+        <form onSubmit={handleSubmit}>
           <div className="input-box">
             <input
               className="input"
-              label="userName"
-              name="userName"
+              label="displayName"
+              name="displayName"
               type="text"
-              value={userName}
               required
-            ></input>
+              value={displayName}
+              onChange={inputHandler}
+            />
             <label>User Name</label>
           </div>
           <div className="input-box">
@@ -44,9 +79,10 @@ const SingUpPopup = () => {
               label="email"
               name="email"
               type="email"
-              value={email}
               required
-            ></input>
+              value={email}
+              onChange={inputHandler}
+            />
             <label>Email</label>
           </div>
           <div className="input-box">
@@ -56,9 +92,10 @@ const SingUpPopup = () => {
               label="password"
               name="password"
               type="password"
-              value={password}
               required
-            ></input>
+              value={password}
+              onChange={inputHandler}
+            />
             <label>Password</label>
           </div>
           <div className="input-box">
@@ -70,20 +107,20 @@ const SingUpPopup = () => {
               type="password"
               value={confirmPassword}
               required
-            ></input>
+              onChange={inputHandler}
+            />
             <label>Confirm Password</label>
           </div>
-          <div className="remember-forgot">
-            <label>
-              <input className="checkbox" type="checkbox" />I agree to the terms
-              & conditions
-            </label>
-          </div>
+          <button type="submit" className="btn">
+            Sign Up
+          </button>
         </form>
-        <button type="submit" className="btn">
-          {" "}
-          Sign Up
-        </button>
+        {/* <div className="remember-forgot">
+          <label>
+            <input className="checkbox" type="checkbox" />I agree to the terms &
+            conditions
+          </label>
+        </div> */}
         <div className="sing-in-register">
           <hr className="separator-line" />
           <p>Already have a account? </p>
