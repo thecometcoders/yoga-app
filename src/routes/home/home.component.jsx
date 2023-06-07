@@ -4,6 +4,7 @@ import HomeHeroBanner from "../../components/home-hero-banner/home-hero-banner.c
 import Navbar from "../../components/navbar/navbar.component";
 import MuxPlayerList from "../../components/mux-player-list/mux-player-list";
 import Newsletter from "../../components/newsletter/newsletter.component";
+import Poses from "../../components/poses/poses.component";
 
 function Home() {
   return (
@@ -18,6 +19,8 @@ function Home() {
       </div>
 
       <Newsletter />
+
+      <Poses />
     </div>
   );
 }
