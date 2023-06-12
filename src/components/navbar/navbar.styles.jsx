@@ -1,28 +1,15 @@
 import styled from "styled-components";
 import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
+import { Link } from "react-router-dom";
 
 // Styling for Desktop menu
-export const Logo = styled(LogoSvg)`
-  /* Logo/white/next */
-  width: 120.24px;
-  height: 105.74px;
-
-  /* Inside auto layout */
-  flex: none;
-  flex-grow: 0;
-`;
 
 export const Container = styled.div`
   /* Auto layout */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 5vw 5vw;
-
-  /* Inside auto layout */
-  flex: none;
-  flex-grow: 1;
+  justify-content: space-between;
 
   /* Font styling */
   font-family: montserrat-bold-700;
@@ -30,64 +17,36 @@ export const Container = styled.div`
   color: white;
 `;
 
-export const LeftMenu = styled.div`
-  /* Frame 1 */
+export const Logo = styled(LogoSvg)`
+  /* Logo/white/next */
+  width: 120.24px;
+  height: 105.74px;
+`;
 
+export const LeftMenu = styled.div`
   /* Auto layout */
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0px;
-  margin-right: auto;
   gap: 35px;
-
-  /*width: 306px;*/
-  /*height: 20px;*/
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex: 1;
+  margin-right: auto;
 `;
 
 export const RightMenu = styled.div`
-  /* Frame 1 */
-
-  /* Auto layout */
-
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
-  padding: 0px;
-  margin-left: auto;
-
   gap: 35px;
-
-  /*width: 292px;*/
-  /*height: 20px;*/
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 2;
-  flex-grow: 0;
+  flex: 1;
+  margin-left: auto;
+  justify-content: flex-end;
 `;
 
 // Styling for the Mobile Menu
 export const MobileMenuButton = styled.span`
-  //display: block!important;
-  //float: right;
-  background-color: #080808;
   color: #fff;
   padding: 6px 7px;
   border-radius: 5px;
-  //margin: 27px auto 0;
   cursor: pointer;
-  //position: relative;
-  //z-index: 10037
 `;
 
 export const Overlay = styled.div`
@@ -121,11 +80,16 @@ export const OverlayContent = styled.div`
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 `;
 
-export const OverlayLinks = styled.a`
+export const OverlayLink = styled(Link)`
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
   color: #818181;
   display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
+`;
+
+export const NavbarLink = styled(Link)`
+  color: white;
+  text-decoration: none;
 `;

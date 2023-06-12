@@ -4,12 +4,15 @@ import {
   LeftMenu,
   Logo,
   MobileMenuButton,
+  NavbarLink,
   Overlay,
   OverlayContent,
-  OverlayLinks,
+  OverlayLink,
   RightMenu,
 } from "./navbar.styles";
 import { useEffect, useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+
 import { FiAlignRight } from "react-icons/fi";
 
 const mobileNavBreakpoint = 768;
@@ -46,40 +49,46 @@ const Navbar = () => {
   };
 
   return (
-    <Container>
-      {mobileMenuActive ? (
-        <>
-          <Overlay id="myNav">
-            <CloseButton onClick={closeMobileNav}>&times;</CloseButton>
-            <OverlayContent>
-              <OverlayLinks href="#">About</OverlayLinks>
-              <OverlayLinks href="#">Services</OverlayLinks>
-              <OverlayLinks href="#">Clients</OverlayLinks>
-              <OverlayLinks href="#">Contact</OverlayLinks>
-            </OverlayContent>
-          </Overlay>
-          <Logo />
-          <MobileMenuButton onClick={openMobileNav}>
-            {" "}
-            <FiAlignRight fontSize={27} />{" "}
-          </MobileMenuButton>
-        </>
-      ) : (
-        <>
-          <LeftMenu>
-            <p>About</p>
-            <p>Yoga poses</p>
-            <p>Videos</p>
-          </LeftMenu>
-          <Logo />
-          <RightMenu>
-            <p>Blog</p>
-            <p>Newsletter</p>
-            <p>Log In</p>
-          </RightMenu>
-        </>
-      )}
-    </Container>
+    <>
+      <Container>
+        {mobileMenuActive ? (
+          <>
+            <Overlay id="myNav">
+              <CloseButton onClick={closeMobileNav}>&times;</CloseButton>
+              <OverlayContent>
+                <OverlayLink to="/">Home</OverlayLink>
+                <OverlayLink to="/audio-classes">Audio Classes</OverlayLink>
+                <OverlayLink to="/yoga-poses">Yoga Poses</OverlayLink>
+                <OverlayLink to="/about">About</OverlayLink>
+                <OverlayLink to="/sign-in">Sign In</OverlayLink>
+              </OverlayContent>
+            </Overlay>
+            <Link to={"/"}>
+              <Logo />
+            </Link>
+            <MobileMenuButton onClick={openMobileNav}>
+              {" "}
+              <FiAlignRight fontSize={"500%"} />{" "}
+            </MobileMenuButton>
+          </>
+        ) : (
+          <>
+            <LeftMenu>
+              <NavbarLink to="/audio-classes">Audio Classes</NavbarLink>
+              <NavbarLink to="/yoga-poses">Yoga Poses</NavbarLink>
+            </LeftMenu>
+            <Link to={"/"}>
+              <Logo />
+            </Link>
+            <RightMenu>
+              <NavbarLink to="/about">About</NavbarLink>
+              <NavbarLink to="/sign-in">Sign In</NavbarLink>
+            </RightMenu>
+          </>
+        )}
+      </Container>
+      <Outlet />
+    </>
   );
 };
 
