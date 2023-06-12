@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   background-image: radial-gradient(
-      farthest-side at bottom left,
+      farthest-side at top center,
       rgba(0, 176, 56, 0.5),
       transparent 90vw
     ),
