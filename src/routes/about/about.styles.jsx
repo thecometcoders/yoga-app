@@ -208,6 +208,10 @@ export const SvgCard = styled.div`
 `;
 
 export const FooterSection = styled.div`
+  display: flex;
+  //flex-direction: column;
+  align-items: flex-end;
+
   background-image: url(${img4});
   width: 100vw;
   height: 200vh;
@@ -216,5 +220,4 @@ export const FooterSection = styled.div`
   background-repeat: no-repeat;
 
   min-width: 400px;
-  flex: 1;
 `;

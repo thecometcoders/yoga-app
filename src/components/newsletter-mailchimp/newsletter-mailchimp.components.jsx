@@ -35,7 +35,7 @@ const NewsletterMailchimpForm = ({ status, message, onValidated }) => {
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             value={email}
-            placeholder="Jane"
+            placeholder="jane@gmail.com"
             required
           />
 
