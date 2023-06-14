@@ -4,10 +4,10 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  //padding: 20px;
   max-width: 300px;
-  margin-left: clamp(20px, 30px, 100px);
-  margin-right: clamp(20px, 30px, 100px);
+  //margin-left: clamp(20px, 30px, 100px);
+  //margin-right: clamp(20px, 30px, 100px);
 `;
 
 export const Img = styled.img`
