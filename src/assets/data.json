@@ -1,0 +1,44 @@
+{
+  "data": {
+    "pose1": {
+      "title": "Standing Forward Bend",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose2": {
+      "title": "Triangle Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose3": {
+      "title": "Sphinx Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose4": {
+      "title": "Half Moon Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose5": {
+      "title": "Chair Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose6": {
+      "title": "Downward Facing Dog",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose7": {
+      "title": "Childs Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    },
+    "pose8": {
+      "title": "Eagle Pose",
+      "image": "fdsa",
+      "description": "fdsa"
+    }
+  }
+}
