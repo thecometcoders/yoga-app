@@ -4,8 +4,6 @@ import img from "../../assets/banner3.jpg";
 import img2 from "../../assets/about1.jpg";
 import img3 from "../../assets/about2.jpg";
 import img4 from "../../assets/about3.jpg";
-import img5 from "../../assets/quote.svg";
-import img6 from "../../assets/quote1.svg";
 
 export const AboutHero = styled.div`
   background-image: url(${img});
