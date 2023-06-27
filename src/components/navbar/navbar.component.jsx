@@ -10,16 +10,23 @@ import {
   OverlayLink,
   RightMenu,
 } from "./navbar.styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import { FiAlignRight } from "react-icons/fi";
+import { UserContext } from "../../contexts/user.context";
+
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const mobileNavBreakpoint = 768;
 
 const Navbar = () => {
   // Boolean for determining whether the screen is mobile or desktop based on a breakpoint
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
+
+  const { currentUser } = useContext(UserContext);
+
+  console.log(currentUser);
 
   // Function for determining current screen size and modifying boolean
   const handleResize = () => {
@@ -48,6 +55,8 @@ const Navbar = () => {
     document.getElementById("myNav").style.width = "0%";
   };
 
+  console.log(currentUser);
+
   return (
     <>
       <Container>
@@ -60,7 +69,11 @@ const Navbar = () => {
                 <OverlayLink to="/audio-classes">Audio Classes</OverlayLink>
                 <OverlayLink to="/yoga-poses">Yoga Poses</OverlayLink>
                 <OverlayLink to="/about">About</OverlayLink>
-                <OverlayLink to="/sign-in">Sign In</OverlayLink>
+                {currentUser ? (
+                  <span onClick={signOutUser}>Sign Out</span>
+                ) : (
+                  <OverlayLink to="/sign-in">Sign In</OverlayLink>
+                )}
               </OverlayContent>
             </Overlay>
             <Link to={"/"}>
@@ -82,7 +95,11 @@ const Navbar = () => {
             </Link>
             <RightMenu>
               <NavbarLink to="/about">About</NavbarLink>
-              <NavbarLink to="/sign-in">Sign In</NavbarLink>
+              {currentUser ? (
+                <span onClick={signOutUser}>Sign Out</span>
+              ) : (
+                <NavbarLink to="/sign-in">Sign In</NavbarLink>
+              )}
             </RightMenu>
           </>
         )}
