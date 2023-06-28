@@ -74,7 +74,6 @@ export const createAuthUserWhitEmailAndPassword = async (email, password) => {
 };
 
 // Log in whit Email & Password
-
 export const SingInAuthUserWhitEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);

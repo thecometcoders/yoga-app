@@ -1,6 +1,4 @@
-import { useState, useContext } from "react";
-import { ReactComponent as EyeLogo } from "../../assets/eye-outline.svg";
-import { ReactComponent as CloseLogo } from "../../assets/close-circle-outline.svg";
+import { useState } from "react";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -10,8 +8,6 @@ import "./sing-in-form.styles.scss";
 import Navbar from "../navbar/navbar.component";
 import Footer from "../Footer/footer.component";
 import { Link } from "react-router-dom";
-
-import { UserContext } from "../../contexts/user.context";
 
 const SingInPopup = () => {
   const defaultFormFields = {
@@ -59,13 +55,11 @@ const SingInPopup = () => {
     }
   };
   return (
-    <>
+    <div className="container">
       <Navbar />
       <div className="wrapper">
-        <CloseLogo className="close-logo" />
-
         <div className="form-box-singIn">
-          <h2>Log in</h2>
+          <h2>Sign in</h2>
           <form>
             <div className="input-box">
               <input
@@ -80,7 +74,6 @@ const SingInPopup = () => {
               <label>Email</label>
             </div>
             <div className="input-box">
-              <EyeLogo className="eye-logo" />
               <input
                 className="input"
                 label="password"
@@ -91,11 +84,6 @@ const SingInPopup = () => {
                 required
               />
               <label>Password</label>
-            </div>
-            <div className="remember-forgot">
-              <label>
-                <input className="checkbox" type="checkbox" /> Remember Me
-              </label>
             </div>
           </form>
           <button type="submit" className="btn" onClick={handleSubmit}>
@@ -115,7 +103,7 @@ const SingInPopup = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -1,15 +1,12 @@
 import "./sing-up-form.component.styles.scss";
-import { ReactComponent as EyeLogo } from "../../assets/eye-outline.svg";
-import { ReactComponent as CloseLogo } from "../../assets/close-circle-outline.svg";
 import {
   createAuthUserWhitEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Navbar from "../navbar/navbar.component";
 import Footer from "../Footer/footer.component";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../contexts/user.context";
 
 const SingUpPopup = () => {
   const defaultFormFields = {
@@ -21,8 +18,6 @@ const SingUpPopup = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
-
-  const { setCurrentUser } = useContext(UserContext);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -48,8 +43,6 @@ const SingUpPopup = () => {
         password
       );
 
-      setCurrentUser(user);
-
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -62,11 +55,9 @@ const SingUpPopup = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <Navbar />
       <div className="sing-up-wrapper">
-        <CloseLogo className="close-logo" />
-
         <div className="form-box-singUp">
           <h2>Sign Up </h2>
 
@@ -96,7 +87,6 @@ const SingUpPopup = () => {
               <label>Email</label>
             </div>
             <div className="input-box">
-              <EyeLogo className="eye-logo" />
               <input
                 className="input"
                 label="password"
@@ -109,7 +99,6 @@ const SingUpPopup = () => {
               <label>Password</label>
             </div>
             <div className="input-box">
-              <EyeLogo className="eye-logo" />
               <input
                 className="input"
                 label="confirmPassword"
@@ -125,12 +114,7 @@ const SingUpPopup = () => {
               Sign Up
             </button>
           </form>
-          {/* <div className="remember-forgot">
-            <label>
-              <input className="checkbox" type="checkbox" />I agree to the terms &
-              conditions
-            </label>
-          </div> */}
+
           <div className="sing-in-register">
             <hr className="separator-line" />
             <p>Already have a account? </p>
@@ -139,7 +123,7 @@ const SingUpPopup = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

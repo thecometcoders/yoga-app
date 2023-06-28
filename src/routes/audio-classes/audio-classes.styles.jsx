@@ -66,3 +66,11 @@ export const SectionContainer = styled.div`
       transparent 90vw
     );
 `;
+
+export const MustSignIn = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+`;

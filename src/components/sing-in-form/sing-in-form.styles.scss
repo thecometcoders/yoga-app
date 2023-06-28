@@ -1,38 +1,40 @@
+$bg-img: url('../../assets/sign-in.jpg');
+
+.container {
+  background-image: $bg-img;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
 .wrapper {
-  position: relative;
   width: 400px;
-  height: 540px;
-  background: transparent;
+  height: 640px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 
-  .close-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35px;
-    margin: 13px;
-    color: rgb(61, 205, 61);
-    cursor: pointer;
-    z-index: 1;
-  }
 
   .form-box-singIn {
-    width: 100%;
-    padding: 100px;
-
+    width: 250%;
+    padding: 20px;
     h2 {
       font-size: 2em;
       color: #fff;
       text-align: left;
-      margin-top: 1em;
-      margin-bottom: 2em;
+      margin-top: 2em;
+      margin-bottom: 1em;
       margin-right: 3em;
+      width: 200px;
     }
 
     .input-box {
@@ -43,18 +45,6 @@
       margin: 30px 0;
       transition: 0.5s;
 
-      .eye-logo {
-        width: 25px;
-        color: #162938;
-        background-color: #fff;
-        border-radius: 100px;
-        position: absolute;
-        right: 1px;
-        bottom: 4px;
-        font-size: 1.2em;
-        line-height: 57px;
-        transform: translateY(-30%);
-      }
 
       input {
         width: 100%;
@@ -65,7 +55,7 @@
         border: none;
         outline: none;
         font-size: 1em;
-        color: #162938;
+        color: #ffffff;
         font-weight: 500;
         padding: 0 35px 0 5px;
       }
