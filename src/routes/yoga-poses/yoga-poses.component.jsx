@@ -5,6 +5,7 @@ import {
   Button,
   H1,
   HeroContainer,
+  MustSignIn,
   P,
   PoseLibrary,
   SearchBox,
@@ -12,12 +13,11 @@ import {
   YogaPosesContainer,
 } from "./yoga-poses.styles";
 import PoseCard from "../../components/pose-card/pose-card.component";
-import pose from "../../assets/pose.jpg";
 import { useEffect, useState } from "react";
-import data from "../../assets/data.json";
-import { wait } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
 import Footer from "../../components/Footer/footer.component";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 
 const YogaPoses = () => {
   const [yogaPoses, setYogaPoses] = useState([]);
@@ -46,6 +46,8 @@ const YogaPoses = () => {
     setSearchField(searchFieldString);
   };
 
+  const { currentUser } = useContext(UserContext);
+
   return (
     <>
       <YogaPosesContainer>
@@ -58,23 +60,29 @@ const YogaPoses = () => {
         </AboutHero>
 
         <BodyContainer>
-          <SectionContainer>
-            <SearchBox
-              onChange={(e) => onSearchChange(e)}
-              placeholder={"Search"}
-            />
+          {currentUser ? (
+            <>
+              <SectionContainer>
+                <SearchBox
+                  onChange={(e) => onSearchChange(e)}
+                  placeholder={"Search"}
+                />
 
-            <PoseLibrary>
-              {filteredYogaPoses?.map((yogaPose) => {
-                return (
-                  <PoseCard
-                    src={yogaPose.url_png}
-                    pose={yogaPose.english_name}
-                  />
-                );
-              })}
-            </PoseLibrary>
-          </SectionContainer>
+                <PoseLibrary>
+                  {filteredYogaPoses?.map((yogaPose) => {
+                    return (
+                      <PoseCard
+                        src={yogaPose.url_png}
+                        pose={yogaPose.english_name}
+                      />
+                    );
+                  })}
+                </PoseLibrary>
+              </SectionContainer>
+            </>
+          ) : (
+            <MustSignIn>Must Sign In to View </MustSignIn>
+          )}
           <Footer />
         </BodyContainer>
       </YogaPosesContainer>

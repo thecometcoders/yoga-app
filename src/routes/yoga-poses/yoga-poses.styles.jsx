@@ -83,3 +83,11 @@ export const SearchBox = styled.input`
   color: white;
   font-weight: bold;
 `;
+
+export const MustSignIn = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+`;
