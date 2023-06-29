@@ -60,6 +60,7 @@ const SingInPopup = () => {
       <div className="wrapper">
         <div className="form-box-singIn">
           <h2>Sign in</h2>
+          <p>Some harmless test</p>
           <form>
             <div className="input-box">
               <input
