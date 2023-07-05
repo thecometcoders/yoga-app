@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthenticationContext } from "../../contexts/authentication.context";
+import { useNavigate } from "react-router-dom";
 import {
   createAuthUserWhitEmailAndPassword,
   createUserDocumentFromAuth,
@@ -7,6 +8,7 @@ import {
 
 const SignUp = () => {
   const [isActive, setIsActive] = useContext(AuthenticationContext);
+  const navigate = useNavigate();
 
   const defaultFormFields = {
     displayName: "",
@@ -44,6 +46,8 @@ const SignUp = () => {
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
+      // return to the main page ones your Register
+      navigate("/");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user , email already in use");

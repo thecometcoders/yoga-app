@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   SingInAuthUserWhitEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import { AuthenticationContext } from "../../contexts/authentication.context";
+import "./sign-in.styles.scss";
 
 const SignIn = () => {
   const [isActive, setIsActive] = useContext(AuthenticationContext);
@@ -15,6 +17,7 @@ const SignIn = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -39,6 +42,8 @@ const SignIn = () => {
       );
 
       resetFormFields();
+      // return to main page
+      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
