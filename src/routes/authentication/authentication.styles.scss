@@ -2,7 +2,7 @@ $bg-img: url("../../assets/sign-in.jpg");
 .web-view {
   background-image: $bg-img;
   width: 100vw;
-  height: 120vh;
+  height: 121vh;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -29,6 +29,7 @@ $bg-img: url("../../assets/sign-in.jpg");
   /* make the effect when the height change */
   transition: height 0.2s ease;
   overflow: hidden;
+  margin-bottom: 25px;
 
   .form-box {
     width: 100%;
@@ -79,7 +80,7 @@ $bg-img: url("../../assets/sign-in.jpg");
     border: none;
     outline: none;
     font-size: 1em;
-    color: #162938;
+    color: rgba(255, 255, 255, 0.878);
     font-weight: 600;
   }
 
@@ -93,7 +94,7 @@ $bg-img: url("../../assets/sign-in.jpg");
   }
 
   .a-forgot-password {
-    color: #d8e3ec;
+    color: rgba(202, 50, 219, 0.7);
     margin-right: 3px;
   }
 }
