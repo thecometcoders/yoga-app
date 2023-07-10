@@ -2,7 +2,7 @@ $bg-img: url("../../assets/sign-in.jpg");
 .web-view {
   background-image: $bg-img;
   width: 100vw;
-  height: 121vh;
+  height: 132vh;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@ $bg-img: url("../../assets/sign-in.jpg");
 
 .wrapper {
   position: relative;
+  // bottom: 200px;
   width: 400px;
   height: 520px;
   background: transparent;

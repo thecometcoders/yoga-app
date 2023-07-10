@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthenticationContext } from "../../contexts/authentication.context";
-import { useNavigate } from "react-router-dom";
+import { NotificationContext } from "../../contexts/notication.context";
+
 import {
   createAuthUserWhitEmailAndPassword,
   createUserDocumentFromAuth,
@@ -8,7 +9,7 @@ import {
 
 const SignUp = () => {
   const [isActive, setIsActive] = useContext(AuthenticationContext);
-  const navigate = useNavigate();
+  const [notification, setNotification] = useContext(NotificationContext);
 
   const defaultFormFields = {
     displayName: "",
@@ -22,6 +23,7 @@ const SignUp = () => {
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
+    setNotification(!notification);
   };
 
   console.log(formFields);
@@ -46,8 +48,6 @@ const SignUp = () => {
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
-      // return to the main page ones your Register
-      navigate("/");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user , email already in use");

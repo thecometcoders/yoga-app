@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   SingInAuthUserWhitEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
+import { NotificationContext } from "../../contexts/notication.context";
 import { AuthenticationContext } from "../../contexts/authentication.context";
 import "./sign-in.styles.scss";
 
 const SignIn = () => {
+  const [notification, setNotification] = useContext(NotificationContext);
   const [isActive, setIsActive] = useContext(AuthenticationContext);
   const defaultFormFields = {
     email: "",
@@ -17,10 +18,10 @@ const SignIn = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  const navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
+    setNotification(!notification);
   };
 
   const handleChange = (event) => {
@@ -42,8 +43,6 @@ const SignIn = () => {
       );
 
       resetFormFields();
-      // return to main page
-      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":

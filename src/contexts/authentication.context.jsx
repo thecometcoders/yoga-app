@@ -8,10 +8,6 @@ export const AuthenticationContext = createContext({
 export const AuthenticationProvider = ({ children }) => {
   const [isActive, setIsActive] = useState(false);
 
-  // const handleSwitch = () => {
-  //   setIsActive(!isActive);
-  // };
-
   const value = [isActive, setIsActive];
 
   return (

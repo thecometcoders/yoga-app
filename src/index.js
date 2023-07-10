@@ -6,14 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 
 import { UserProvider } from "./contexts/user.context";
 import { AuthenticationProvider } from "./contexts/authentication.context";
+import { NotificationProvider } from "./contexts/notication.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <AuthenticationProvider>
-        <App />
-      </AuthenticationProvider>
+      <NotificationProvider>
+        <AuthenticationProvider>
+          <App />
+        </AuthenticationProvider>
+      </NotificationProvider>
     </UserProvider>
   </React.StrictMode>
 );
