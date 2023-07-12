@@ -12,7 +12,6 @@ const Authentication = () => {
   const [isActive] = useContext(AuthenticationContext);
   let wrapper = "wrapper";
   let wrapperActive = "wrapper active";
-  console.log("Active Log = " + isActive);
 
   return (
     <div className="web-view">

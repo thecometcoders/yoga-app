@@ -32,14 +32,14 @@ $bg-img: url("../../assets/sign-in.jpg");
   overflow: hidden;
   margin-bottom: 25px;
 
-  .form-box {
-    width: 100%;
-    padding: 40px;
-  }
-  .singIn {
-    transition: transform 0.18s ease;
-    transform: translateX(0);
-  }
+  // .form-box {
+  //   width: 100%;
+  //   padding: 40px;
+  // }
+  // .singIn {
+  //   transition: transform 0.18s ease;
+  //   transform: translateX(0);
+  // }
 
   .register {
     position: absolute;
@@ -54,25 +54,25 @@ $bg-img: url("../../assets/sign-in.jpg");
     margin-top: 2px;
   }
 
-  .input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #162938;
-    margin: 30px 0;
+  // .input-box {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 50px;
+  //   border-bottom: 2px solid #162938;
+  //   margin: 30px 0;
 
-    label {
-      position: absolute;
-      top: 50%;
-      left: 5px;
-      transform: translateY(-50%);
-      font-size: 1em;
-      color: #cbd6de;
-      font-weight: 500;
-      pointer-events: none;
-      transition: 0.5s;
-    }
-  }
+  //   label {
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 5px;
+  //     transform: translateY(-50%);
+  //     font-size: 1em;
+  //     color: #cbd6de;
+  //     font-weight: 500;
+  //     pointer-events: none;
+  //     transition: 0.5s;
+  //   }
+  // }
 
   .input-box input {
     width: 100%;

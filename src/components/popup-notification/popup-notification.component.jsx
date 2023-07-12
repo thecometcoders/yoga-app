@@ -1,30 +1,33 @@
 import { useContext } from "react";
 import { NotificationContext } from "../../contexts/notication.context";
-import { ReactComponent as CheckLogo } from "../../assets/checkmark-circle-outline.svg";
-import { ReactComponent as Close } from "../../assets/close-outline.svg";
-
-import "./popup-notification.styles.scss";
+import {
+  NotificationOff,
+  NotificationOn,
+  LogoContainer,
+  CloseLogo,
+  CheckCircle,
+} from "./popup-notification.styles";
 
 const PopupNotification = () => {
   const [notification, setNotification] = useContext(NotificationContext);
-  let offNotification = "notification off";
-  let activateNotification = "notification show";
-  console.log("Notification Log = " + notification);
-
+  const switcher = () => {
+    setNotification(!notification);
+  };
   return (
-    <div className={notification ? activateNotification : offNotification}>
-      <span
-        className="close-container"
-        onClick={() => {
-          setNotification(!notification);
-        }}
-      >
-        <Close className="close-logo" />
-      </span>
-      <CheckLogo className="check-logo" />
-      <h2 className="greetings">You are whit us!</h2>
-      <h3>Namaste🙏!</h3>
-    </div>
+    <>
+      {notification ? (
+        <NotificationOn>
+          <LogoContainer onClick={switcher}>
+            <CloseLogo />
+          </LogoContainer>
+          <CheckCircle />
+          <h2>You are whit us!</h2>
+          <h3>Namaste🙏!</h3>
+        </NotificationOn>
+      ) : (
+        <NotificationOff />
+      )}
+    </>
   );
 };
 
