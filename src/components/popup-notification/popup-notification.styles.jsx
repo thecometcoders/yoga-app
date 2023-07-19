@@ -79,18 +79,18 @@ export const LogoContainer = styled.span`
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(157, 154, 154, 0.5);
   border-bottom-left-radius: 20px;
-  cursor: pointer;
-
-  &:hover {
-    color: #ffffff;
-    box-shadow: 0 0 30px rgba(157, 154, 154, 0.5);
-  }
 `;
 
 export const CloseLogo = styled(Close)`
   margin-top: 7px;
   max-width: 30px;
   color: rgba(246, 236, 236, 0.577);
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+    box-shadow: 0 0 30px rgba(157, 154, 154, 0.5);
+  }
 `;
 
 export const CheckCircle = styled(CheckLogo)`

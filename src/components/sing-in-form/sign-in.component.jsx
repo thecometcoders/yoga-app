@@ -24,7 +24,7 @@ const SignIn = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
     setNotification(!notification);
-    setMessage("Your Log In");
+    setMessage("You are logged in");
     console.log("Message after " + message);
   };
 

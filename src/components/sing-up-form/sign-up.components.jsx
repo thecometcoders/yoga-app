@@ -25,7 +25,7 @@ const SignUp = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
     setNotification(!notification);
-    setMessage("You are Registered");
+    setMessage("You are registered");
     console.log("Message before " + message);
   };
 
