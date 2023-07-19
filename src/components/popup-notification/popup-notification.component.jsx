@@ -8,8 +8,9 @@ import {
   CheckCircle,
 } from "./popup-notification.styles";
 
-const PopupNotification = () => {
-  const [notification, setNotification] = useContext(NotificationContext);
+const PopupNotification = (props) => {
+  const [notification, setNotification, message] =
+    useContext(NotificationContext);
   const switcher = () => {
     setNotification(!notification);
   };
@@ -21,7 +22,7 @@ const PopupNotification = () => {
             <CloseLogo />
           </LogoContainer>
           <CheckCircle />
-          <h2>You are whit us!</h2>
+          <h2>{message}</h2>
           <h3>Namaste🙏!</h3>
         </NotificationOn>
       ) : (

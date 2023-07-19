@@ -7,8 +7,9 @@ export const NotificationContext = createContext({
 
 export const NotificationProvider = ({ children }) => {
   const [notification, setNotification] = useState(false);
+  const [message, setMessage] = useState("You are registered");
 
-  const value = [notification, setNotification];
+  const value = [notification, setNotification, message, setMessage];
 
   return (
     <NotificationContext.Provider value={value}>

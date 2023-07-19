@@ -9,7 +9,9 @@ import { AuthenticationContext } from "../../contexts/authentication.context";
 import "./sign-in.styles.scss";
 
 const SignIn = () => {
-  const [notification, setNotification] = useContext(NotificationContext);
+  const [notification, setNotification, message, setMessage] =
+    useContext(NotificationContext);
+
   const [isActive, setIsActive] = useContext(AuthenticationContext);
   const defaultFormFields = {
     email: "",
@@ -22,6 +24,8 @@ const SignIn = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
     setNotification(!notification);
+    setMessage("Your Log In");
+    console.log("Message after " + message);
   };
 
   const handleChange = (event) => {

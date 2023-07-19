@@ -9,7 +9,8 @@ import {
 
 const SignUp = () => {
   const [isActive, setIsActive] = useContext(AuthenticationContext);
-  const [notification, setNotification] = useContext(NotificationContext);
+  const [notification, setNotification, message, setMessage] =
+    useContext(NotificationContext);
 
   const defaultFormFields = {
     displayName: "",
@@ -24,6 +25,8 @@ const SignUp = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
     setNotification(!notification);
+    setMessage("You are Registered");
+    console.log("Message before " + message);
   };
 
   console.log(formFields);
